@@ -1,0 +1,44 @@
+.navigation-bar {
+	flex: 1 1 240px;
+	max-width: 240px;
+	text-align: center;
+}
+
+.menu {
+	&-icon {
+		display: block;
+		width: 42px;
+		height: 42px;
+		margin: 0 auto 10px;
+		fill: darken($main-color, 25%);
+		@extend %transition;
+	}
+	& &-item {
+		&__link {
+			padding: 2.5rem 1rem;
+			font-size: 1.15rem;
+			display: block;
+			height: 100%;
+			&:hover {
+				.menu-icon {
+					fill: $main-color;
+				}
+			}
+		}
+	}
+}
+
+.current-menu-item {
+	.menu-item__link {
+		font-weight: bold;
+		.menu-icon {
+			fill: $blue;
+			opacity: 1;
+		}
+		&:hover {
+			.menu-icon {
+				fill: $blue;
+			}
+		}
+	}
+}

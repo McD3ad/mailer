@@ -1,0 +1,26 @@
+.button {
+	@extend %transition;
+	color: #fff;
+	&__inline {
+		margin-bottom: 0;
+	}
+	&.larger {
+		padding: rem-calc(0 28);
+		height: 3.75rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.icon {
+		display: inline-block;
+		vertical-align: middle;
+		font-style: normal;
+		font-size: 1.25rem;
+		&-left {
+			margin-right: rem-calc(10);
+		}
+		&-right {
+			margin-left: rem-calc(10);
+		}
+	}
+}

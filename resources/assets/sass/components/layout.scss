@@ -1,0 +1,71 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background-color: $main-bg;
+	color: $main-color;
+	font: 300 1rem/1.625 "Circe", sans-serif;
+}
+
+a {
+	color: $main-color;
+	@extend %transition;
+	&:hover {
+		color: #fff;
+	}
+}
+
+#app {
+	background-color: $content-bg;
+	color: $content-color;
+}
+
+.content {
+	a {
+		color: inherit;
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+
+.layout {
+	min-height: 100vh;
+}
+
+.intro {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: darken(#fff, 10%);
+	color: $main-color;
+	height: 100%;
+}
+
+.title {
+	mark {
+		font-size: 1rem;
+		vertical-align: middle;
+	}
+}
+
+.callout-image {
+	height: 300px;
+}
+
+.container {
+	padding: rem-calc(15);
+}
+
+svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+mark {
+	background-color: $blue;
+	color: #fff;
+	padding: 0 0.35em;
+}

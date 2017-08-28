@@ -1,0 +1,55 @@
+.editor {
+	height: 100%;
+	&-aside-entry {
+		width: 300px;
+		background-color: $aside-bg;
+	}
+	&-main-entry {
+		header {
+			background-color: darken(#fff, 5%);
+			.menu {
+				height: $editor-entry-header-height;
+				margin: 0 (2.5rem - 0.625rem);
+				.icon {
+					color: darken($main-color, 15%);
+					font-size: 1.25rem;
+					margin: 0 0.625rem;
+					padding: 0;
+					&:hover {
+						color: darken($main-color, 25%);
+					}
+				}
+			}
+		}
+		main {
+			padding: rem-calc(40);
+		}
+	}
+	&-aside-entry,
+	&-main-entry {
+		height: 100%;
+		header {
+			height: $editor-entry-header-height;
+			.button {
+				margin-bottom: 0;
+				color: #fff !important;
+			}
+		}
+	}
+}
+
+.email-list {
+	margin: 0;
+	&-article {
+		padding: 20px;
+		border-bottom: darken($aside-bg, 3%) solid 1px;
+		&__title {
+			margin-bottom: 0;
+		}
+	}
+	.date {
+		padding-top: 4px;
+		line-height: 1;
+		font-size: rem-calc(12);
+	}
+}
