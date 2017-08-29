@@ -19,7 +19,7 @@ class CreateMailersTable extends Migration
             $table->text('body');
             $table->string('email_from')->nullable();
             $table->text('email_to');
-            $table->unsignedInteger('user_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

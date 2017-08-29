@@ -4378,7 +4378,7 @@ h6 small,
 h1,
 .h1 {
   font-size: 1.5rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -4386,7 +4386,7 @@ h1,
 h2,
 .h2 {
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -4394,7 +4394,7 @@ h2,
 h3,
 .h3 {
   font-size: 1.1875rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -4402,7 +4402,7 @@ h3,
 h4,
 .h4 {
   font-size: 1.125rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -4410,7 +4410,7 @@ h4,
 h5,
 .h5 {
   font-size: 1.0625rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -4418,7 +4418,7 @@ h5,
 h6,
 .h6 {
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -11517,6 +11517,11 @@ a:hover {
   color: #2b2b2f;
 }
 
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .content a {
   color: inherit;
 }
@@ -11526,7 +11531,8 @@ a:hover {
 }
 
 .layout {
-  min-height: 100vh;
+  height: calc(100vh - 40px);
+  overflow: hidden;
 }
 
 .intro {
@@ -11554,7 +11560,16 @@ a:hover {
 }
 
 .container {
-  padding: 0.9375rem;
+  padding: 1.25rem;
+}
+
+.forgot-password {
+  margin-left: 0.625rem;
+}
+
+.logout .icon {
+  color: #4378eb;
+  font-size: 80%;
 }
 
 svg {
@@ -11634,15 +11649,15 @@ mark {
   display: inline-block;
   vertical-align: middle;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .button .icon-left {
-  margin-right: 0.625rem;
+  margin-right: 0.375rem;
 }
 
 .button .icon-right {
-  margin-left: 0.625rem;
+  margin-left: 0.375rem;
 }
 
 .editor {
@@ -11681,6 +11696,8 @@ mark {
 .editor-aside-entry,
 .editor-main-entry {
   height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .editor-aside-entry header,
@@ -11698,18 +11715,41 @@ mark {
   margin: 0;
 }
 
-.email-list-article {
-  padding: 20px;
+.email-list__article {
   border-bottom: #222637 solid 1px;
 }
 
-.email-list-article__title {
+.email-list__article-item {
+  padding: 20px;
+}
+
+.email-list__article-title {
   margin-bottom: 0;
+}
+
+.email-list__article.edited-now {
+  background-color: #fcfcfc;
+}
+
+.email-list__article.edited-now a {
+  color: #2b2b2f;
 }
 
 .email-list .date {
   padding-top: 4px;
   line-height: 1;
   font-size: 0.75rem;
+}
+
+.auth .button {
+  margin-bottom: 0;
+}
+
+#top-bar {
+  height: 40px;
+}
+
+#top-bar > .row {
+  height: 100%;
 }
 

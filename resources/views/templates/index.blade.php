@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Шаблоны')
+@section('title', 'Шаблоны рассылок')
 
 @section('content')
+	
+	<main role="main" class="container">
+		
+
+	
+	</main>
+
 @endsection

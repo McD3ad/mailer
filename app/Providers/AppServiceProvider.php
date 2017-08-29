@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Mailer;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -42,6 +44,13 @@ class AppServiceProvider extends ServiceProvider
 
 
 		\Carbon\Carbon::setLocale('ru');
+		
+		view()->composer('mailer.partials.aside', function($view) {
+			$user     = Auth::id();
+			$articles = Mailer::query()->where('user_id', $user)->latest()->get();
+			
+			$view->with('articles', $articles);
+		});
 	}
 
 	/**

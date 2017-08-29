@@ -28,6 +28,8 @@
 	&-aside-entry,
 	&-main-entry {
 		height: 100%;
+		max-height: 100%;
+		overflow-y: auto;
 		header {
 			height: $editor-entry-header-height;
 			.button {
@@ -40,11 +42,19 @@
 
 .email-list {
 	margin: 0;
-	&-article {
-		padding: 20px;
+	&__article {
 		border-bottom: darken($aside-bg, 3%) solid 1px;
-		&__title {
+		&-item {
+			padding: 20px;
+		}
+		&-title {
 			margin-bottom: 0;
+		}
+		&.edited-now {
+			background-color: darken(#fff, 1%);
+			a {
+				color: $content-color;
+			}
 		}
 	}
 	.date {

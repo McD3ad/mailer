@@ -10,3 +10,5 @@ Route::resource('mailer', 'MailerController');
 Route::prefix('docs')->group(function () {
 	Route::get('/', 'DocumentationController@index')->name('docs.index');
 });
+
+Auth::routes();

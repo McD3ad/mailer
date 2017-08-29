@@ -6,6 +6,6 @@
 	<link rel="stylesheet" href="foundation-emails.css">
 </head>
 <body>
-	{{ $data }}
+	{!! $body !!}
 </body>
 </html>

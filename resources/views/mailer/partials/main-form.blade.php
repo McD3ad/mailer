@@ -6,8 +6,7 @@
 
     <label>
         Адрес, от имени которого нужно отправить письмо.
-        <mark>Параметр не обязательный.</mark>
-        <input type="email" name="email_from">
+        <input type="email" name="email_from" value="{{ \Auth::user()->email }}">
     </label>
 
     <label>

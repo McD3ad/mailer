@@ -15,12 +15,12 @@
 		display: inline-block;
 		vertical-align: middle;
 		font-style: normal;
-		font-size: 1.25rem;
+		font-size: 1.15rem;
 		&-left {
-			margin-right: rem-calc(10);
+			margin-right: rem-calc(6);
 		}
 		&-right {
-			margin-left: rem-calc(10);
+			margin-left: rem-calc(6);
 		}
 	}
 }
