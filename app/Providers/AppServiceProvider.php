@@ -38,11 +38,11 @@ class AppServiceProvider extends ServiceProvider
 					'icon' => 'docs'
 				]
 			]);
-
+			
 			$view->with('navigation', $nav);
 		});
-
-
+		
+		
 		\Carbon\Carbon::setLocale('ru');
 		
 		view()->composer('mailer.partials.aside', function($view) {
@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider
 			$view->with('articles', $articles);
 		});
 	}
-
+	
 	/**
 	 * Register any application services.
 	 *

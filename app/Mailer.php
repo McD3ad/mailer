@@ -18,7 +18,7 @@ class Mailer extends Model
 		'email_to',
 		'user_id'
 	];
-
+	
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
