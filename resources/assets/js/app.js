@@ -4,6 +4,11 @@ import "./bootstrap";
 //     el: "#app"
 // });
 
-setTimeout(function() {
-	document.querySelector('.flash-message').style.display = 'none';
-}, 5000);
+
+let message = document.querySelector('.flash-message');
+
+if (message) {
+	setTimeout(function() {
+		message.style.display = 'none';
+	}, 5000);
+}

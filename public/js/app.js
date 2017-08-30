@@ -762,9 +762,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //     el: "#app"
 // });
 
-setTimeout(function () {
-	document.querySelector('.flash-message').style.display = 'none';
-}, 5000);
+
+var message = document.querySelector('.flash-message');
+
+if (message) {
+	setTimeout(function () {
+		message.style.display = 'none';
+	}, 5000);
+}
 
 /***/ }),
 /* 9 */
