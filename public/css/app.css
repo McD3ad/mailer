@@ -11613,6 +11613,10 @@ dl li:last-child {
   margin-bottom: 0;
 }
 
+.menu li {
+  margin-bottom: 0;
+}
+
 .navigation-bar {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 240px;
@@ -11747,6 +11751,7 @@ dl li:last-child {
 
 .email-list__article {
   border-bottom: #222637 solid 1px;
+  margin-bottom: 0;
 }
 
 .email-list__article-item {
