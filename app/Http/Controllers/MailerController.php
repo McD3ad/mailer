@@ -41,7 +41,7 @@ class MailerController extends Controller
 		$body = $inky->releaseTheKraken($data['body']);
 
 		Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
-			$m->from($data['email_from'], 'Your Application');
+			$m->from($data['email_from'], 'Mailer');
 
 			$m->to($data['email_to'])->subject($data['subject']);
 		});
