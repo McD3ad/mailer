@@ -762,6 +762,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //     el: "#app"
 // });
 
+setTimeout(function () {
+	document.querySelector('.flash-message').style.display = 'none';
+}, 5000);
+
 /***/ }),
 /* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {

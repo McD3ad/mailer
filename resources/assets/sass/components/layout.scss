@@ -62,11 +62,11 @@ a {
 }
 
 .container {
-	padding: rem-calc(20);
+	padding: 20px;
 }
 
 .forgot-password {
-	margin-left: rem-calc(10);
+	margin-left: 10px;
 }
 
 .logout {
@@ -74,6 +74,18 @@ a {
 		color: $blue;
 		font-size: 80%;
 	}
+}
+
+.errors {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 280px;
+	padding: 20px;
+	background-color: $red;
+	color: #fff;
+	text-shadow: 0 1px darken($red, 10%);
+	line-height: 1.25;
 }
 
 svg {
@@ -85,4 +97,14 @@ mark {
 	background-color: $blue;
 	color: #fff;
 	padding: 0 0.35em;
+}
+
+ul, ol, dl {
+	line-height: inherit;
+	li {
+		margin-bottom: 0.5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

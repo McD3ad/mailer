@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EmailFormsValidation;
 use App\Mailer;
 use Hampe\Inky\Inky;
 use Illuminate\Http\Request;
@@ -29,9 +30,11 @@ class MailerController extends Controller
 	/**
 	 * @param Mailer $mailer
 	 *
+	 * @param EmailFormsValidation $forms_validation
+	 *
 	 * @return redirect back
 	 */
-	public function store(Mailer $mailer)
+	public function store(Mailer $mailer, EmailFormsValidation $request)
 	{
 		$data = request()->all();
 		$inky = new Inky();
@@ -77,12 +80,22 @@ class MailerController extends Controller
 	 */
 	public function edit(Mailer $mailer)
 	{
-		return view('mailer.edit', $mailer);
+		return view('mailer.edit', compact('mailer'));
 	}
 	
-	public function update($mailer)
+	/**
+	 * @param $mailer
+	 * @param Mailer $post
+	 *
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function update($mailer, Mailer $post)
 	{
-		return redirect()->route('mailer.index');
+		$message = $post->find($mailer);
+		
+		$message->update(request()->all());
+		
+		return back();
 	}
 	
 	public function show()

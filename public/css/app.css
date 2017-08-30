@@ -11560,16 +11560,28 @@ a:hover {
 }
 
 .container {
-  padding: 1.25rem;
+  padding: 20px;
 }
 
 .forgot-password {
-  margin-left: 0.625rem;
+  margin-left: 10px;
 }
 
 .logout .icon {
   color: #4378eb;
   font-size: 80%;
+}
+
+.errors {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  padding: 20px;
+  background-color: #f4645f;
+  color: #fff;
+  text-shadow: 0 1px #f1362f;
+  line-height: 1.25;
 }
 
 svg {
@@ -11581,6 +11593,24 @@ mark {
   background-color: #4378eb;
   color: #fff;
   padding: 0 0.35em;
+}
+
+ul,
+ol,
+dl {
+  line-height: inherit;
+}
+
+ul li,
+ol li,
+dl li {
+  margin-bottom: 0.5rem;
+}
+
+ul li:last-child,
+ol li:last-child,
+dl li:last-child {
+  margin-bottom: 0;
 }
 
 .navigation-bar {
