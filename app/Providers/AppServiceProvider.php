@@ -15,34 +15,6 @@ class AppServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		view()->composer('partials.navigation', function ($view) {
-			$nav = collect([
-				[
-					'name' => 'Главная',
-					'link' => url('/'),
-					'icon' => 'home'
-				],
-				[
-					'name' => 'Шаблоны',
-					'link' => url('templates'),
-					'icon' => 'proto'
-				],
-				[
-					'name' => 'Конструктор',
-					'link' => url('mailer'),
-					'icon' => 'constructor'
-				],
-				[
-					'name' => 'Документация',
-					'link' => url('docs'),
-					'icon' => 'docs'
-				]
-			]);
-			
-			$view->with('navigation', $nav);
-		});
-		
-		
 		\Carbon\Carbon::setLocale('ru');
 		
 		view()->composer('mailer.partials.aside', function($view) {

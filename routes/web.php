@@ -1,13 +1,13 @@
 <?php
 Route::get('/', function () {
-	return view('layouts.index');
+	return view('index');
 });
 
 Route::get('templates', 'TemplateController@index')->name('templates.index');
 
 Route::resource('mailer', 'MailerController');
 
-Route::prefix('docs')->group(function () {
+Route::prefix('documentation')->group(function () {
 	Route::get('/', 'DocumentationController@index')->name('docs.index');
 });
 

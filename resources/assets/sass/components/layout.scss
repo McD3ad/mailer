@@ -57,10 +57,6 @@ a {
 	}
 }
 
-.callout-image {
-	height: 300px;
-}
-
 .container {
 	padding: 20px;
 }
@@ -77,15 +73,24 @@ a {
 }
 
 .errors {
+	background-color: $red;
+	text-shadow: 0 1px darken($red, 15%);
+}
+
+.status {
+	background-color: $green;
+	text-shadow: 0 1px darken($green, 15%);
+}
+
+.status,
+.errors {
 	position: fixed;
 	top: 20px;
 	right: 20px;
 	width: 280px;
 	padding: 20px;
-	background-color: $red;
-	color: #fff;
-	text-shadow: 0 1px darken($red, 10%);
 	line-height: 1.25;
+	color: #fff;
 }
 
 svg {
