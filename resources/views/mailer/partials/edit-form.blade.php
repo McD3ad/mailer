@@ -20,6 +20,7 @@
 	</label>
 	
 	{{ csrf_field() }}
+	<input type="hidden" name="_method" value="put">
 	
 	<div class="text-right">
 		<button class="button button-gray" name="submit" value="save">

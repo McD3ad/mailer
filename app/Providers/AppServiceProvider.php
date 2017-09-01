@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
 		
 		view()->composer('mailer.partials.aside', function($view) {
 			$user     = Auth::id();
-			$articles = Mailer::query()->where('user_id', $user)->latest()->get();
+			$articles = Mailer::query()->where('user_id', $user)->orderBy('updated_at', 'desc')->get();
 			
 			$view->with('articles', $articles);
 		});

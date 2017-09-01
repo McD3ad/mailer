@@ -39,18 +39,16 @@ class MailerController extends Controller
 	public function store(Mailer $mailer, EmailFormsValidation $request)
 	{
 		$data = request()->all();
-		$inky = new Inky();
-		$body = $inky->releaseTheKraken($data['body']);
-		
-		
+
 		if ($data['submit'] == 'send') {
+			$inky = new Inky();
+			$body = $inky->releaseTheKraken($data['body']);
 			
 			Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
 				$m->from($data['email_from'], 'Mailer');
 				
 				$m->to($data['email_to'])->subject($data['subject']);
 			});
-			
 		}
 		
 		$mailer->create([
@@ -104,18 +102,19 @@ class MailerController extends Controller
 	public function update($mailer, Mailer $post)
 	{
 		$data = request()->all();
-		$inky = new Inky();
-		$body = $inky->releaseTheKraken($data['body']);
-		
+
 		if ($data['submit'] == 'send') {
-			
+			$inky = new Inky();
+			$body = $inky->releaseTheKraken($data['body']);
+
 			Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
 				$m->from($data['email_from'], 'Mailer');
-				
+
 				$m->to($data['email_to'])->subject($data['subject']);
 			});
-			
 		}
+
+//		array_push($data, ['updated_at' => time()]);
 		
 		$message = $post->find($mailer);
 		$message->update($data);
