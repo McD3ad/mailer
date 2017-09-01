@@ -18,34 +18,41 @@ class MailerController extends Controller
 	{
 		$this->middleware('auth');
 	}
-
+	
+	
 	/**
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 * Mailer index view
 	 */
 	public function index()
 	{
 		return view('mailer.index');
 	}
-
+	
+	
 	/**
+	 * Save and if needed send an emails
+	 *
 	 * @param Mailer $mailer
 	 *
 	 * @param EmailFormsValidation $forms_validation
-	 *
-	 * @return redirect back
 	 */
 	public function store(Mailer $mailer, EmailFormsValidation $request)
 	{
 		$data = request()->all();
 		$inky = new Inky();
 		$body = $inky->releaseTheKraken($data['body']);
-
-		Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
-			$m->from($data['email_from'], 'Mailer');
-
-			$m->to($data['email_to'])->subject($data['subject']);
-		});
-
+		
+		
+		if ($data['submit'] == 'send') {
+			
+			Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
+				$m->from($data['email_from'], 'Mailer');
+				
+				$m->to($data['email_to'])->subject($data['subject']);
+			});
+			
+		}
+		
 		$mailer->create([
 			'subject'    => $data['subject'],
 			'body'       => $data['body'],
@@ -53,66 +60,68 @@ class MailerController extends Controller
 			'email_from' => $data['email_from'],
 			'user_id'    => Auth::id(),
 		]);
-
+		
 		request()->session()->flash('status', 'Сообщение успешно отправлено');
-
+		
 		return back();
 	}
-
+	
+	
 	/**
-	 * @param Mailer $mailer
+	 * Create email composer form
 	 *
-	 * @return email composer page
+	 * @param Mailer $mailer
 	 */
 	public function create()
 	{
 		$template = 'default';
-
+		
 		if (request()->get('template')) {
 			$template = request()->get('template');
 		}
-
+		
 		return view('mailer.compose', compact('template'));
 	}
-
+	
+	
 	/**
-	 * @param Mailer $mailer
+	 * Get email edit page
 	 *
-	 * @return email edit page
+	 * @param Mailer $mailer
 	 */
 	public function edit(Mailer $mailer)
 	{
 		return view('mailer.edit', compact('mailer'));
 	}
-
+	
+	
 	/**
+	 * Update and send if needed an email
+	 *
 	 * @param $mailer
 	 * @param Mailer $post
-	 *
-	 * @return \Illuminate\Http\RedirectResponse
 	 */
 	public function update($mailer, Mailer $post)
 	{
 		$data = request()->all();
 		$inky = new Inky();
 		$body = $inky->releaseTheKraken($data['body']);
-
-		Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
-			$m->from($data['email_from'], 'Mailer');
-
-			$m->to($data['email_to'])->subject($data['subject']);
-		});
-
+		
+		if ($data['submit'] == 'send') {
+			
+			Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
+				$m->from($data['email_from'], 'Mailer');
+				
+				$m->to($data['email_to'])->subject($data['subject']);
+			});
+			
+		}
+		
 		$message = $post->find($mailer);
 		$message->update($data);
-
+		
 		request()->session()->flash('status', 'Сообщение успешно отправлено');
-
+		
 		return back();
-	}
-
-	public function show()
-	{
-
 	}
 }

@@ -61,17 +61,6 @@ a {
 	padding: 20px;
 }
 
-.forgot-password {
-	margin-left: 10px;
-}
-
-.logout {
-	.icon {
-		color: $blue;
-		font-size: 80%;
-	}
-}
-
 .errors {
 	background-color: $red;
 	text-shadow: 0 1px darken($red, 15%);
@@ -116,4 +105,11 @@ ul, ol, dl {
 
 .menu li {
 	margin-bottom: 0;
+}
+
+.mCSB_container {
+	&.mCS_y_hidden {
+		height: 100%;
+		max-height: 100%;
+	}
 }

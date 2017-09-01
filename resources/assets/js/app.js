@@ -1,10 +1,5 @@
 import "./bootstrap";
+import "./components/jquery-scripts";
 
-import "./scripts";
-
-// new Vue({
-//     el: "#app"
-// });
-
-
-
+// Vue.js section
+import "./Vue/editor";

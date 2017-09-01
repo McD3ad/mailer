@@ -19,9 +19,14 @@
 		<textarea name="body" rows="8" id="inky">@include('emails.templates.' . $template)</textarea>
 	</label>
 	
+	{{ csrf_field() }}
+	
 	<div class="text-right">
-		{{ csrf_field() }}
-		<button class="button larger">
+		<button class="button button-gray" name="submit" value="save">
+			<i class="icon icon-left ion-ios-upload"></i>
+			Сохранить
+		</button>
+		<button class="button" name="submit" value="send">
 			Отправить
 			<i class="icon icon-right ion-android-send"></i>
 		</button>

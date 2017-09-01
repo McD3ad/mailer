@@ -13241,15 +13241,6 @@ a:hover {
   padding: 20px;
 }
 
-.forgot-password {
-  margin-left: 10px;
-}
-
-.logout .icon {
-  color: #4378eb;
-  font-size: 80%;
-}
-
 .errors {
   background-color: #f4645f;
   text-shadow: 0 1px #ef1f17;
@@ -13304,6 +13295,11 @@ dl li:last-child {
   margin-bottom: 0;
 }
 
+.mCSB_container.mCS_y_hidden {
+  height: 100%;
+  max-height: 100%;
+}
+
 .navigation-bar {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 240px;
@@ -13344,11 +13340,17 @@ dl li:last-child {
   fill: #4378eb;
 }
 
-.button {
-  color: #fff;
+.forgot-password {
+  margin-left: 10px;
 }
 
-.button__inline {
+.logout .icon {
+  color: #4378eb;
+  font-size: 80%;
+}
+
+.button {
+  color: #fff;
   margin-bottom: 0;
 }
 
@@ -13379,6 +13381,16 @@ dl li:last-child {
 
 .button .icon-right {
   margin-left: 0.375rem;
+}
+
+.button-gray {
+  background-color: #e6e5e5;
+  color: #2b2b2f;
+}
+
+.button-gray:hover {
+  background-color: #cccccc;
+  color: #2b2b2f;
 }
 
 .editor {

@@ -1,9 +1,7 @@
 .button {
 	@extend %transition;
 	color: #fff;
-	&__inline {
-		margin-bottom: 0;
-	}
+	margin-bottom: 0;
 	&.larger {
 		padding: rem-calc(0 28);
 		height: 3.75rem;
@@ -21,6 +19,16 @@
 		}
 		&-right {
 			margin-left: rem-calc(6);
+		}
+	}
+	
+	// Colors
+	&-gray {
+		background-color: darken(#fff, 10%);
+		color: $content-color;
+		&:hover {
+			background-color: darken(#fff, 20%);
+			color: $content-color;
 		}
 	}
 }
