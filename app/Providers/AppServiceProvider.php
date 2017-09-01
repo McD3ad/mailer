@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Mailer;
+use App\Models\Mailer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 

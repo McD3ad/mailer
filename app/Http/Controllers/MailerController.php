@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmailFormsValidation;
-use App\Mailer;
+use App\Models\Mailer;
 use Hampe\Inky\Inky;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
