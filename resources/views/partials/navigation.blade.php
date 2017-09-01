@@ -1,3 +1,28 @@
+<?php
+$navigation = collect([
+	[
+		'name' => 'Главная',
+		'link' => url('/'),
+		'icon' => 'home'
+	],
+	[
+		'name' => 'Шаблоны',
+		'link' => url('templates'),
+		'icon' => 'proto'
+	],
+	[
+		'name' => 'Конструктор',
+		'link' => url('mailer'),
+		'icon' => 'constructor'
+	],
+	[
+		'name' => 'Документация',
+		'link' => url('documentation'),
+		'icon' => 'docs'
+	]
+]);
+?>
+
 <aside class="column navigation-bar">
     <nav>
         <ul class="menu vertical">

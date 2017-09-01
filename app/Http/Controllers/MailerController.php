@@ -18,7 +18,7 @@ class MailerController extends Controller
 	{
 		$this->middleware('auth');
 	}
-	
+
 	/**
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
@@ -26,7 +26,7 @@ class MailerController extends Controller
 	{
 		return view('mailer.index');
 	}
-	
+
 	/**
 	 * @param Mailer $mailer
 	 *
@@ -39,13 +39,13 @@ class MailerController extends Controller
 		$data = request()->all();
 		$inky = new Inky();
 		$body = $inky->releaseTheKraken($data['body']);
-		
+
 		Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
-			$m->from($data['email_from'], 'Your Application');
-			
+			$m->from($data['email_from'], 'Mailer');
+
 			$m->to($data['email_to'])->subject($data['subject']);
 		});
-		
+
 		$mailer->create([
 			'subject'    => $data['subject'],
 			'body'       => $data['body'],
@@ -53,36 +53,38 @@ class MailerController extends Controller
 			'email_from' => $data['email_from'],
 			'user_id'    => Auth::id(),
 		]);
-		
+
+		request()->session()->flash('status', 'Сообщение успешно отправлено');
+
 		return back();
 	}
-	
+
 	/**
 	 * @param Mailer $mailer
 	 *
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 * @return email composer page
 	 */
 	public function create()
 	{
 		$template = 'default';
-		
+
 		if (request()->get('template')) {
 			$template = request()->get('template');
 		}
-		
+
 		return view('mailer.compose', compact('template'));
 	}
-	
+
 	/**
 	 * @param Mailer $mailer
 	 *
-	 * @return $mailer
+	 * @return email edit page
 	 */
 	public function edit(Mailer $mailer)
 	{
 		return view('mailer.edit', compact('mailer'));
 	}
-	
+
 	/**
 	 * @param $mailer
 	 * @param Mailer $post
@@ -91,15 +93,26 @@ class MailerController extends Controller
 	 */
 	public function update($mailer, Mailer $post)
 	{
+		$data = request()->all();
+		$inky = new Inky();
+		$body = $inky->releaseTheKraken($data['body']);
+
+		Mail::send('emails.master', ['body' => $body], function ($m) use ($data) {
+			$m->from($data['email_from'], 'Mailer');
+
+			$m->to($data['email_to'])->subject($data['subject']);
+		});
+
 		$message = $post->find($mailer);
-		
-		$message->update(request()->all());
-		
+		$message->update($data);
+
+		request()->session()->flash('status', 'Сообщение успешно отправлено');
+
 		return back();
 	}
-	
+
 	public function show()
 	{
-	
+
 	}
 }

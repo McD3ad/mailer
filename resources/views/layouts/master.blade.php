@@ -39,6 +39,12 @@
 	</div>
 @endif
 
+@if(Session::has('status'))
+    <div class="status flash-message">
+        {{ session('status') }}
+    </div>
+@endif
+
 <script src="{{ asset('js/app.js') }}"></script>
 
 @yield('scripts')

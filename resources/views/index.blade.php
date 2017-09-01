@@ -8,7 +8,7 @@
         
         <div class="row">
             <div class="column shrink">
-                <img src="http://foundation.zurb.com/assets/img/homepage/inky-template.svg" class="callout-image"
+                <img src="http://foundation.zurb.com/assets/img/homepage/inky-template.svg" style="height: 300px;"
                      alt="Foundation Emails">
             </div>
             

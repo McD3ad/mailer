@@ -29,7 +29,7 @@
 	&-main-entry {
 		height: 100%;
 		max-height: 100%;
-		overflow-y: auto;
+		//overflow: hidden;
 		header {
 			height: $editor-entry-header-height;
 			.button {
@@ -52,7 +52,7 @@
 			margin-bottom: 0;
 		}
 		&.edited-now {
-			background-color: darken(#fff, 1%);
+			background-color: darken(#fff, 2%);
 			a {
 				color: $content-color;
 			}
@@ -63,4 +63,8 @@
 		line-height: 1;
 		font-size: rem-calc(12);
 	}
+}
+
+.mCSB_inside > .mCSB_container {
+	margin-right: 0;
 }
