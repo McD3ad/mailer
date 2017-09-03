@@ -19,4 +19,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
         'resources/assets/js/jquery-scripts.js',
         'public/js/app.js'
-    ], 'public/js/app.js');
+    ], 'public/js/master.js');

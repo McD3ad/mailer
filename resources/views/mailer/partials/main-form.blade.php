@@ -6,7 +6,7 @@
 	
 	<label>
 		Адрес, от имени которого нужно отправить письмо.
-		<input type="email" name="email_from" value="{{ \Auth::user()->email }}">
+		<input type="email" name="email_from" value="{{ auth()->user()->email }}">
 	</label>
 	
 	<label>
@@ -16,7 +16,11 @@
 	
 	<label>
 		Сообщение:
-		<textarea name="body" rows="8" id="inky">@include('emails.templates.' . $template)</textarea>
+		{{--<textarea name="body" rows="8" id="inky">@include('emails.templates.' . $template)</textarea>--}}
+
+		<div id="editor">
+            <editor></editor>
+        </div>
 	</label>
 	
 	{{ csrf_field() }}

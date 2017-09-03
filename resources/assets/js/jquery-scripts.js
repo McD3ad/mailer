@@ -8,15 +8,16 @@
     }
 
 
-    $('.editor-aside-entry').mCustomScrollbar({
-        axis: "y",
-        theme: "light",
-        scrollButtons: true,
-        mouseWheel: true,
-    });
-
-    $('.editor-main-entry').mCustomScrollbar({
-        axis: "y",
-        theme: "dark"
-    })
+    // $('.editor-aside-entry').mCustomScrollbar({
+    //     axis: "y",
+    //     theme: "light",
+    //     scrollButtons: true,
+    //     mouseWheel: true,
+    // });
+    //
+    // $('.editor-main-entry').mCustomScrollbar({
+    //     axis: "y",
+    //     theme: "dark",
+    //     mouseWheel: true,
+    // })
 })(jQuery);

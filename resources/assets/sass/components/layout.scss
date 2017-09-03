@@ -93,6 +93,10 @@ mark {
 	padding: 0 0.35em;
 }
 
+label {
+	font-size: inherit;
+}
+
 ul, ol, dl {
 	line-height: inherit;
 	li {
@@ -112,4 +116,8 @@ ul, ol, dl {
 		height: 100%;
 		max-height: 100%;
 	}
+}
+
+.mCSB_inside > .mCSB_container {
+	margin-right: 0;
 }

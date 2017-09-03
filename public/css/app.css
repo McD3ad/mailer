@@ -36,7 +36,8 @@
 
 a,
 .menu-icon,
-.button {
+.button,
+.editor-constructor .icons {
   -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
@@ -341,7 +342,8 @@ button,
 input,
 optgroup,
 select,
-textarea {
+textarea,
+.text-input {
   font-family: sans-serif;
   /* 1 */
   font-size: 100%;
@@ -524,7 +526,8 @@ progress {
      * Remove the default vertical scrollbar in IE.
      */
 
-textarea {
+textarea,
+.text-input {
   overflow: auto;
 }
 
@@ -622,7 +625,8 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-textarea {
+textarea,
+.text-input {
   height: auto;
   min-height: 50px;
   border-radius: 0;
@@ -668,7 +672,8 @@ button,
 input,
 optgroup,
 select,
-textarea {
+textarea,
+.text-input {
   font-family: inherit;
 }
 
@@ -4786,7 +4791,8 @@ ol.no-bullet {
 [type='time'],
 [type='url'],
 [type='color'],
-textarea {
+textarea,
+.text-input {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -4827,7 +4833,8 @@ textarea {
 [type='time']:focus,
 [type='url']:focus,
 [type='color']:focus,
-textarea:focus {
+textarea:focus,
+.text-input:focus {
   outline: none;
   border: 1px solid #8a8a8a;
   background-color: #fefefe;
@@ -4839,33 +4846,40 @@ textarea:focus {
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
 }
 
-textarea {
+textarea,
+.text-input {
   max-width: 100%;
 }
 
-textarea[rows] {
+textarea[rows],
+[rows].text-input {
   height: auto;
 }
 
 input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+textarea::-webkit-input-placeholder,
+.text-input::-webkit-input-placeholder {
   color: #cacaca;
 }
 
 input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+textarea:-ms-input-placeholder,
+.text-input:-ms-input-placeholder {
   color: #cacaca;
 }
 
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+.text-input::placeholder {
   color: #cacaca;
 }
 
 input:disabled,
 input[readonly],
 textarea:disabled,
-textarea[readonly] {
+.text-input:disabled,
+textarea[readonly],
+[readonly].text-input {
   background-color: #e6e6e6;
   cursor: not-allowed;
 }
@@ -5141,7 +5155,7 @@ select[multiple] {
 .button {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
   font-family: inherit;
   padding: 0.85em 1em;
   -webkit-appearance: none;
@@ -5928,7 +5942,7 @@ a.button:focus {
 }
 
 .breadcrumbs {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
   list-style: none;
 }
 
@@ -6208,7 +6222,7 @@ a.button:focus {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border: 1px solid #e6e6e6;
   border-radius: 0;
   background: #fefefe;
@@ -6229,7 +6243,7 @@ a.button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem;
+  padding: 1.25rem;
   background: #e6e6e6;
 }
 
@@ -6241,7 +6255,7 @@ a.button:focus {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .card-section > :last-child {
@@ -7320,7 +7334,7 @@ a.button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
@@ -7339,7 +7353,7 @@ a.button:focus {
 @media screen and (max-width: 39.9375em) {
   .media-object.stack-for-small .media-object-section {
     padding: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     max-width: 100%;
@@ -7357,11 +7371,11 @@ a.button:focus {
 }
 
 .media-object-section:first-child {
-  padding-right: 1rem;
+  padding-right: 1.25rem;
 }
 
 .media-object-section:last-child:not(:nth-child(2)) {
-  padding-left: 1rem;
+  padding-left: 1.25rem;
 }
 
 .media-object-section > :last-child {
@@ -8135,7 +8149,7 @@ a.button:focus {
 
 .pagination {
   margin-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .pagination::before,
@@ -8223,7 +8237,7 @@ a.button:focus {
 
 .progress {
   height: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border-radius: 0;
   background-color: #cacaca;
 }
@@ -8431,7 +8445,7 @@ html.is-reveal-open body {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: none;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid #cacaca;
   border-radius: 0;
   background-color: #fefefe;
@@ -8528,7 +8542,7 @@ html.is-reveal-open body {
 .switch {
   height: 2rem;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   outline: 0;
   font-size: 0.875rem;
   font-weight: bold;
@@ -8682,7 +8696,7 @@ input:checked + label > .switch-inactive {
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border-radius: 0;
 }
 
@@ -8890,7 +8904,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .thumbnail {
   display: inline-block;
   max-width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border: solid 4px #fefefe;
   border-radius: 0;
   -webkit-box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
@@ -9856,22 +9870,22 @@ a.thumbnail image {
 
 @media print, screen and (min-width: 40em) {
   .row .row {
-    margin-right: -0.9375rem;
-    margin-left: -0.9375rem;
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
   }
 }
 
 @media print, screen and (min-width: 64em) {
   .row .row {
-    margin-right: -0.9375rem;
-    margin-left: -0.9375rem;
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
   }
 }
 
 @media screen and (min-width: 75em) {
   .row .row {
-    margin-right: -0.9375rem;
-    margin-left: -0.9375rem;
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
   }
 }
 
@@ -9919,8 +9933,8 @@ a.thumbnail image {
 @media print, screen and (min-width: 40em) {
   .column,
   .columns {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -10457,8 +10471,8 @@ a.thumbnail image {
 
   .medium-uncollapse > .column,
   .medium-uncollapse > .columns {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -10733,8 +10747,8 @@ a.thumbnail image {
 
   .large-uncollapse > .column,
   .large-uncollapse > .columns {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -11009,8 +11023,8 @@ a.thumbnail image {
 
   .xlarge-uncollapse > .column,
   .xlarge-uncollapse > .columns {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -11031,7 +11045,7 @@ a.thumbnail image {
 
 @media print, screen and (min-width: 40em) {
   .column-block {
-    margin-bottom: 1.875rem;
+    margin-bottom: 2.5rem;
   }
 
   .column-block > :last-child {
@@ -13273,6 +13287,10 @@ mark {
   padding: 0 0.35em;
 }
 
+label {
+  font-size: inherit;
+}
+
 ul,
 ol,
 dl {
@@ -13298,6 +13316,10 @@ dl li:last-child {
 .mCSB_container.mCS_y_hidden {
   height: 100%;
   max-height: 100%;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0;
 }
 
 .navigation-bar {
@@ -13430,6 +13452,7 @@ dl li:last-child {
 .editor-main-entry {
   height: 100%;
   max-height: 100%;
+  overflow-y: auto;
 }
 
 .editor-aside-entry header,
@@ -13441,6 +13464,48 @@ dl li:last-child {
 .editor-main-entry header .button {
   margin-bottom: 0;
   color: #fff !important;
+}
+
+.editor-constructor {
+  background-color: #e6e5e5;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: 1.25rem;
+}
+
+.editor-constructor .add-element {
+  border: #babbc2 dashed 2px;
+  min-height: 40px;
+  position: relative;
+}
+
+.editor-constructor .icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 150%;
+}
+
+.editor-constructor .icons i {
+  color: #5c5c64;
+  cursor: pointer;
+}
+
+.editor-constructor .icons i:hover {
+  color: #848692;
+}
+
+.editor-constructor .icons i.icon-delete {
+  margin-left: 10px;
+}
+
+.editor-component {
+  border: #babbc2 solid 2px;
+  margin-top: 1.25rem !important;
+  padding: 10px;
 }
 
 .email-list {
@@ -13474,8 +13539,31 @@ dl li:last-child {
   font-size: 0.75rem;
 }
 
-.mCSB_inside > .mCSB_container {
-  margin-right: 0;
+.component-selector {
+  margin-top: 3.75rem;
+  width: 100%;
+}
+
+.component-selector ul {
+  margin-bottom: 0;
+}
+
+.component-selector ul li {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.component-selector ul li a {
+  color: #2b2b2f;
+}
+
+.component-selector ul li i {
+  color: #babbc2;
+  font-size: 24px;
+}
+
+.text-input {
+  height: 240px;
 }
 
 .auth .button {
@@ -13488,5 +13576,10 @@ dl li:last-child {
 
 #top-bar > .row {
   height: 100%;
+}
+
+.icon-delete,
+.editor-constructor .icons i.icon-delete {
+  color: #E53935;
 }
 

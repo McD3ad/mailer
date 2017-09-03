@@ -29,6 +29,7 @@
 	&-main-entry {
 		height: 100%;
 		max-height: 100%;
+		overflow-y: auto;
 		header {
 			height: $editor-entry-header-height;
 			.button {
@@ -36,6 +37,45 @@
 				color: #fff !important;
 			}
 		}
+	}
+
+	// Constructor
+	&-constructor {
+		background-color: darken(#fff, 10%);
+		padding: 10px;
+		border: 1px solid darken(#fff, 20%);
+		margin-bottom: $global-margin;
+		.add-element {
+			border: $main-color dashed 2px;
+			min-height: 40px;
+			position: relative;
+		}
+		.icons {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin: auto;
+			text-align: center;
+			font-size: 150%;
+			@extend %transition;
+			i {
+				color: lighten($content-color, 20%);
+				cursor: pointer;
+				&:hover {
+					color: darken($main-color, 20%);
+				}
+				&.icon-delete {
+					@extend .icon-delete;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+	&-component {
+		border: $main-color solid 2px;
+		margin-top: $global-margin !important;
+		padding: 10px;
 	}
 }
 
@@ -64,6 +104,26 @@
 	}
 }
 
-.mCSB_inside > .mCSB_container {
-	margin-right: 0;
+.component-selector {
+	margin-top: $global-margin * 3;
+	width: 100%;
+	ul {
+		margin-bottom: 0;
+		li {
+			text-align: center;
+			margin-bottom: 0;
+			a {
+				color: $content-color;
+			}
+			i {
+				color: $main-color;
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+.text-input {
+	@extend textarea !optional;
+	height: 240px;
 }
